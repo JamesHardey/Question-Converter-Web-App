@@ -1,38 +1,201 @@
+/* App.css */
+
+/* Basic styles for the entire app */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* .App input[type="text"]{
+
+} */
+
+.App label {
+  font-weight: bold;
+  margin: 10px;
+}
+
+
+.App .select-field {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #007bff; /* Add a border */
+  border-radius: 5px;
+  outline: none;
+}
+
+.App .select-field:focus {
+  border-color: #0056b3; /* Change border color on focus */
+}
+
+
+
+.App div{
+  margin-bottom: 20px;
+}
+
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea{
+  border: 2px solid #007bff;
+  color: black;
+  font-size: 16px;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for the QuestionForm component */
+.QuestionForm {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Improve the input styles */
+.App input[type="text"], .QuestionForm input[type="text"] {
+  /* width: 100%; */
+  /* Increase padding for better appearance */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #007bff; /* Add a border */
+  border-radius: 5px;
+  font-size: 16px;
+  height: 90;
+  outline: none; /* Remove default input focus outline */
+  /* Increase the height of the input box */
+}
+
+.QuestionForm input[type="text"] {
+  width: 70%;
+  padding: 12px; 
+}
+
+
+.QuestionForm input[type="text"]:focus {
+  border-color: #0056b3; /* Change border color on focus */
+}
+
+
+
+.QuestionForm ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.QuestionForm li {
+  margin: 30px;
+}
+
+.QuestionForm label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.App button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styles for the QuestionList component */
+.QuestionList {
+  margin-top: 20px;
+}
+
+.QuestionList h2 {
+  margin-bottom: 10px;
+}
+
+.QuestionList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.QuestionList li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.QuestionList li.correct {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+
+
+/* Add this CSS to your App.css or a separate CSS file */
+
+/* Styles for the alert container */
+.alert-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  z-index: 9999;
+  animation: slide-up 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for the alert card */
+.alert {
+  background-color: #337a12; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Keyframes for the slide-up animation */
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
+
+  .QuestionForm input[type="text"] {
+    font-size: 14px;
   }
 }
